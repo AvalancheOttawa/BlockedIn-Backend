@@ -20,15 +20,15 @@ class GazeData:
     def getGaze(self):
         frame = self.getFrame()
         gaze.refresh(frame)
-        text = 0
-        if gaze.is_blinking():
-            text = 1
-        elif gaze.is_right():
-            text = 2
+        text = ""
+        # if gaze.is_blinking():
+        #     text = ""
+        if gaze.is_right():
+            text = "right"
         elif gaze.is_left():
-            text = 3
+            text = "left"
         elif gaze.is_center():
-            text = 4
+            text = "center"
 
     
         return text
